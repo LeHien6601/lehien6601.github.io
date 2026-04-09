@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LNHGames | Game Dev Journey</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #ff4757;
+            --secondary: #2ed573;
+            --accent: #ffa502;
+            --dark: #2f3542;
+            --light: #ffffff;
+            --bg-gradient: linear-gradient(135deg, #70a1ff, #5352ed);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--bg-gradient);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px var(--primary);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -30px auto 50px;
+            padding: 20px;
+        }
+
+        .card {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* Game Section */
+        .game-featured {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #f1f2f6;
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px dashed var(--secondary);
+        }
+
+        .game-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 18px;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s;
+            margin: 5px;
+        }
+
+        .btn:hover { transform: scale(1.05); }
+
+        .btn-google { background: var(--secondary); color: white; }
+        .btn-itch { background: var(--dark); color: white; }
+        .btn-social { background: #eccc68; color: var(--dark); font-size: 0.9rem; }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        footer a { color: white; text-decoration: underline; }
+
+        @media (max-width: 600px) {
+            .game-featured { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>LNHGames</h1>
+    <p>Creating Fun, One Tap at a Time!</p>
+</header>
+
+<div class="container">
+    
+    <div class="card">
+        <h2>🚀 Latest Release</h2>
+        <div class="game-featured">
+            <div class="game-icon">🧩</div>
+            <div>
+                <h3>Emoji Sort: Match & Pop</h3>
+                <p>A colorful and relaxing puzzle game available now on Google Play.</p>
+                <a href="https://play.google.com/store/apps/details?id=com.LNH.EmojiSort" class="btn btn-google">
+                    <i class="fab fa-google-play"></i> Get it on Play Store
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🧪 Prototypes & Mini-Games</h2>
+        <p>Check out my experimental projects and free-to-play prototypes on Itch.io!</p>
+        <a href="https://lehien6601.itch.io/" class="btn btn-itch">
+            <i class="fab fa-itch-io"></i> Visit Itch.io Profile
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>Connect With Me</h2>
+        <p>Follow the journey and watch behind-the-scenes content.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61576571985898" class="btn btn-social">
+                <i class="fab fa-facebook"></i> Facebook
+            </a>
+            <a href="https://www.youtube.com/@lnhgames-1002" class="btn btn-social">
+                <i class="fab fa-youtube"></i> YouTube
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 LNHGames. All rights reserved.</p>
+    <p><a href="/data-deletion">Data Deletion Request</a></p>
+    <p><a href="/policy/">Privacy Support</a></p>
+</footer>
+
+</body>
+</html>
