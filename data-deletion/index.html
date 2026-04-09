@@ -1,79 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data Deletion Request – LNHGames</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      color: #222;
-    }
-    h1, h2 {
-      color: #111;
-    }
-    ul {
-      margin-top: 5px;
-    }
-    li {
-      margin-bottom: 5px;
-    }
-    .box {
-      background: #f5f5f5;
-      padding: 15px;
-      border-radius: 8px;
-      margin: 20px 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Deletion Request | LNHGames</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #ff4757;
+            --secondary: #2ed573;
+            --accent: #ffa502;
+            --dark: #2f3542;
+            --light: #ffffff;
+            --bg-gradient: linear-gradient(135deg, #70a1ff, #5352ed);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f1f2f6;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: var(--bg-gradient);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -30px auto 50px;
+            padding: 20px;
+        }
+
+        .card {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        h1 { margin: 0; font-size: 2.2rem; text-shadow: 2px 2px rgba(0,0,0,0.1); }
+        h2 { 
+            color: var(--primary); 
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 1.4rem;
+        }
+
+        .step-box {
+            background: #f8f9fa;
+            border-left: 5px solid var(--secondary);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            background: #f1f2f6;
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        .btn-home {
+            display: inline-block;
+            margin-top: 40px;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #a4b0be;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .info-grid { grid-template-columns: 1fr; }
+            .container { margin-top: 0; }
+        }
+    </style>
 </head>
 <body>
 
-  <h1>Data Deletion Request – LNHGames</h1>
+<div class="header">
+    <h1><i class="fas fa-user-shield"></i> Data Deletion Request</h1>
+    <p>Your privacy and data control are important to us.</p>
+</div>
 
-  <p>If you would like to request deletion of your data for the game <strong>Emoji Sort: Match &amp; Pop</strong>, please follow the steps below.</p>
+<div class="container">
+    <div class="card">
+        <p>If you would like to request the deletion of your data for <strong>Emoji Sort: Match & Pop</strong> (or any other LNHGames title), please follow the steps below.</p>
 
-  <h2>How to request data deletion</h2>
-  <ol>
-    <li>Send an email to: <strong>lnhdev2@gmail.com</strong></li>
-    <li>Use the subject: <strong>Data Deletion Request</strong></li>
-    <li>Include the following information:
-      <ul>
-        <li>Your Player ID (if available)</li>
-        <li>Your device information (optional)</li>
-      </ul>
-    </li>
-  </ol>
+        <h2><i class="fas fa-envelope-open-text"></i> How to Request</h2>
+        <div class="step-box">
+            <p>Please send an email to: <br>
+               <a href="mailto:lehien6601@gmail.com" class="highlight">lehien6601@gmail.com</a></p>
+            <ul>
+                <li><strong>Subject:</strong> Data Deletion Request</li>
+                <li><strong>Include:</strong> Your Player ID (found in game settings) or your Google Play Games username.</li>
+            </ul>
+        </div>
 
-  <div class="box">
-    <strong>Tip:</strong> Providing your Player ID helps us process your request faster.
-  </div>
+        <div class="info-grid">
+            <div class="info-item">
+                <h3><i class="fas fa-trash-alt" style="color: var(--primary);"></i> What is Deleted</h3>
+                <ul>
+                    <li>Game progress & Cloud saves</li>
+                    <li>In-game identifiers</li>
+                    <li>Match statistics</li>
+                </ul>
+            </div>
+            <div class="info-item">
+                <h3><i class="fas fa-clock" style="color: var(--secondary);"></i> Processing Time</h3>
+                <p>Requests are usually processed within <strong>7 business days</strong>. You will receive a confirmation email once completed.</p>
+            </div>
+        </div>
 
-  <h2>What data will be deleted</h2>
-  <ul>
-    <li>Your game progress (cloud save data)</li>
-    <li>Any associated identifiers used within the game</li>
-  </ul>
+        <h2>Important Note</h2>
+        <p>
+            This action is <strong>permanent</strong>. Once your data is deleted, your level progress and unlocks in <em>Emoji Sort: Match & Pop</em> cannot be recovered. 
+            Some anonymous analytical data may be retained for legal or security purposes as per our <a href="../policy/" style="color: var(--secondary);">Privacy Policy</a>.
+        </p>
 
-  <h2>What data may be retained</h2>
-  <ul>
-    <li>Some data may be retained temporarily for legal, security, or fraud prevention purposes</li>
-  </ul>
+        <a href="../" class="btn-home"><i class="fas fa-arrow-left"></i> Back to LNHGames Home</a>
+    </div>
 
-  <h2>Processing time</h2>
-  <p>We will process your request within 7 days.</p>
-
-  <h2>Important note</h2>
-  <p>
-    This request will delete your saved progress associated with Google Play Games Services.
-    Some data may also be managed by Google according to their own policies.
-  </p>
-
-  <h2>Developer</h2>
-  <p><strong>LNHGames</strong></p>
+    <footer>
+        &copy; 2026 LNHGames | Publisher Name: LNHGames
+    </footer>
+</div>
 
 </body>
 </html>
