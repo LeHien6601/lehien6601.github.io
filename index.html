@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LNHGames | Game Dev Journey</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #ff4757;
@@ -57,7 +59,210 @@
             margin-bottom: 20px;
         }
 
-        /* Game Section */
+        /* ── Latest Release Section ── */
+        .section-title {
+            font-family: 'Nunito', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 0 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 8px;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .game-card {
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid rgba(0,0,0,0.08);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.25s cubic-bezier(.34,1.56,.64,1), box-shadow 0.25s ease;
+            animation: cardIn 0.5s cubic-bezier(.34,1.2,.64,1) both;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .game-card:nth-child(2) { animation-delay: 0.1s; }
+
+        @keyframes cardIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.96); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .game-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+        }
+
+        .card-banner {
+            height: 100px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-banner-alchemy {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+
+        .card-banner-emoji {
+            background: linear-gradient(135deg, #2d1b69 0%, #4a0e8f 50%, #7b2ff7 100%);
+        }
+
+        .banner-stars {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            background: white;
+            animation: twinkle 2s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50%       { opacity: 1;   transform: scale(1.5); }
+        }
+
+        .game-icon-wrap {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 3px solid rgba(255,255,255,0.25);
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+            transition: transform 0.3s cubic-bezier(.34,1.56,.64,1);
+        }
+
+        .game-card:hover .game-icon-wrap {
+            transform: scale(1.08) rotate(-3deg);
+        }
+
+        .game-icon-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .icon-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .card-body {
+            padding: 14px 16px 16px;
+        }
+
+        .new-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            font-family: 'Nunito', sans-serif;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            animation: pulse-badge 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-badge {
+            0%, 100% { transform: scale(1); }
+            50%       { transform: scale(1.04); }
+        }
+
+        .game-title {
+            font-family: 'Nunito', sans-serif;
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--dark);
+            margin: 0 0 4px;
+            line-height: 1.3;
+        }
+
+        .game-desc {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            color: #666;
+            margin: 0 0 12px;
+            line-height: 1.5;
+        }
+
+        .play-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 9px 16px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            width: 100%;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .play-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 0; height: 0;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s ease, height 0.4s ease;
+        }
+
+        .play-btn:active::after {
+            width: 200px;
+            height: 200px;
+        }
+
+        .play-btn:hover {
+            background: #26c96a;
+            transform: scale(1.02);
+        }
+
+        .play-btn svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+        }
+
+        /* ── Other existing sections ── */
         .game-featured {
             display: flex;
             align-items: center;
@@ -66,6 +271,7 @@
             padding: 20px;
             border-radius: 15px;
             border: 2px dashed var(--secondary);
+            margin-bottom: 16px;
         }
 
         .game-icon {
@@ -92,7 +298,7 @@
         .btn:hover { transform: scale(1.05); }
 
         .btn-google { background: var(--secondary); color: white; }
-        .btn-itch { background: var(--dark); color: white; }
+        .btn-itch   { background: var(--dark); color: white; }
         .btn-social { background: #eccc68; color: var(--dark); font-size: 0.9rem; }
 
         .social-links {
@@ -112,6 +318,7 @@
         footer a { color: white; text-decoration: underline; }
 
         @media (max-width: 600px) {
+            .games-grid { grid-template-columns: 1fr; }
             .game-featured { flex-direction: column; text-align: center; }
         }
     </style>
@@ -125,51 +332,73 @@
 </header>
 
 <div class="container">
-    
+
+    <!-- ── Latest Release ── -->
     <div class="card">
-        <h2>🚀 Latest Release</h2>
-        <div class="game-featured">
-            <img src="images/alchemy-flow-icon.png" alt="Alchemy Flow Icon" style="width: 80px; height: 80px; border-radius: 18px; object-fit: cover;">
-            <div>
-                <h3>Alchemy Flow: Puzzle Fusion</h3>
-                <p>Master the elements! Pour, react, and fuse magical liquids to solve complex puzzles on Google Play.</p>
-                <a href="https://play.google.com/store/apps/details?id=com.LNH.AlchemicFlow" class="btn btn-google">
-                    <i class="fab fa-google-play"></i> Get it on Play Store
-                </a>
-            </div>
-        </div>
-        <div class="game-featured">
-            <img src="images/emoji-sort-icon.png" alt="Emoji Sort Icon" style="width: 80px; height: 80px; border-radius: 18px; object-fit: cover;">
-            <div>
-                <h3>Emoji Sort: Match & Pop</h3>
-                <p>A colorful and relaxing puzzle game available now on Google Play.</p>
-                <a href="https://play.google.com/store/apps/details?id=com.LNH.EmojiSort" class="btn btn-google">
-                    <i class="fab fa-google-play"></i> Get it on Play Store
-                </a>
-            </div>
+        <h2 class="section-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#ff4757">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+            </svg>
+            Latest Release
+        </h2>
+
+        <div class="games-grid">
+
+            <!-- Alchemy Flow -->
+            <a class="game-card" href="https://play.google.com/store/apps/details?id=com.LNH.AlchemicFlow" target="_blank" rel="noopener">
+                <div class="card-banner card-banner-alchemy">
+                    <div class="banner-stars" id="stars1"></div>
+                    <div class="game-icon-wrap">
+                        <img src="images/alchemy-flow-icon.png" alt="Alchemy Flow Icon">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <span class="new-badge">New</span>
+                    <h3 class="game-title">Alchemy Flow: Puzzle Fusion</h3>
+                    <p class="game-desc">Pour, react & fuse magical liquids to solve complex puzzles.</p>
+                    <span class="play-btn">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.36.6 1.24 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/>
+                        </svg>
+                        Get on Play Store
+                    </span>
+                </div>
+            </a>
+
+            <!-- Emoji Sort -->
+            <a class="game-card" href="https://play.google.com/store/apps/details?id=com.LNH.EmojiSort" target="_blank" rel="noopener">
+                <div class="card-banner card-banner-emoji">
+                    <div class="banner-stars" id="stars2"></div>
+                    <div class="game-icon-wrap">
+                        <img src="images/emoji-sort-icon.png" alt="Emoji Sort Icon">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <span class="new-badge">New</span>
+                    <h3 class="game-title">Emoji Sort: Match & Pop</h3>
+                    <p class="game-desc">A colorful and relaxing puzzle game to match & pop your way through.</p>
+                    <span class="play-btn">
+                        <svg viewBox="0 0 24 24" fill="white">
+                            <path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.36.6 1.24 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/>
+                        </svg>
+                        Get on Play Store
+                    </span>
+                </div>
+            </a>
+
         </div>
     </div>
-    <!-- <div class="card">
-        <h2>⚗️ In the Lab</h2>
-        <div class="game-featured" style="border-color: var(--accent); background: #fff9ed;">
-            <div class="game-icon" style="background: #a55eea; color: white;">🧪</div>
-            <div>
-                <h3>Alchemy Flow: Fusion Puzzle</h3>
-                <p>Master the elements! Pour, react, and fuse magical liquids to solve complex puzzles. <strong>Coming soon to mobile.</strong></p>
-                <span style="font-size: 0.8rem; background: var(--accent); color: white; padding: 4px 12px; border-radius: 20px; font-weight: bold;">
-                    DEVELOPMENT PHASE
-                </span>
-            </div>
-        </div>
-    </div> -->
+
+    <!-- ── Prototypes ── -->
     <div class="card">
-        <h2>🧪 Prototypes & Mini-Games</h2>
+        <h2>🧪 Prototypes &amp; Mini-Games</h2>
         <p>Check out my experimental projects and free-to-play prototypes on Itch.io!</p>
         <a href="https://lehien6601.itch.io/" class="btn btn-itch">
             <i class="fab fa-itch-io"></i> Visit Itch.io Profile
         </a>
     </div>
 
+    <!-- ── Connect ── -->
     <div class="card">
         <h2>Connect With Me</h2>
         <p>Follow the journey and watch behind-the-scenes content.</p>
@@ -190,6 +419,26 @@
     <p><a href="/data-deletion/">Data Deletion Request</a></p>
     <p><a href="/policy/">Privacy Support</a></p>
 </footer>
+
+<script>
+    function makeStars(containerId, count) {
+        const c = document.getElementById(containerId);
+        if (!c) return;
+        for (let i = 0; i < count; i++) {
+            const s = document.createElement('div');
+            s.className = 'star';
+            s.style.left  = (Math.random() * 100) + '%';
+            s.style.top   = (Math.random() * 100) + '%';
+            s.style.animationDelay = (Math.random() * 2) + 's';
+            const size = (Math.random() * 2 + 1) + 'px';
+            s.style.width  = size;
+            s.style.height = size;
+            c.appendChild(s);
+        }
+    }
+    makeStars('stars1', 18);
+    makeStars('stars2', 18);
+</script>
 
 </body>
 </html>
