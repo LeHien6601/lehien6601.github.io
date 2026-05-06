@@ -321,6 +321,16 @@
             .games-grid { grid-template-columns: 1fr; }
             .game-featured { flex-direction: column; text-align: center; }
         }
+
+        .card-banner-gravlink {
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            border-bottom: 2px solid #00d2ff; /* Neon cyan accent */
+        }
+
+        /* Optional: A "Coming Soon" specific badge color */
+        .soon-badge {
+            background: var(--accent) !important;
+        }
     </style>
 </head>
 <body>
@@ -385,9 +395,31 @@
                     </span>
                 </div>
             </a>
-
+            <!-- GravLink -->
+            <div class="game-card" style="cursor: default;"> <!-- Removed anchor tag to prevent clicking a dead link -->
+                <div class="card-banner card-banner-gravlink">
+                    <div class="banner-stars" id="stars3"></div>
+                    <div class="game-icon-wrap" style="border-color: #00d2ff;">
+                        <div class="icon-placeholder" style="background: #2f3542; color: #00d2ff;">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <span class="new-badge soon-badge">Upcoming</span>
+                    <h3 class="game-title">GravLink: Orbital Drift</h3>
+                    <p class="game-desc">Master the slingshot! A high-speed, one-tap endless runner through neon gravity wells.</p>
+                    
+                    <!-- Updated Release Date Button -->
+                    <div class="play-btn" style="background: #57606f; cursor: default;">
+                        <i class="far fa-calendar-alt" style="margin-right: 8px;"></i>
+                        Release: July 2026
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    
 
     <!-- ── Prototypes ── -->
     <div class="card">
@@ -438,6 +470,7 @@
     }
     makeStars('stars1', 18);
     makeStars('stars2', 18);
+    makeStars('stars3', 25);
 </script>
 
 </body>
